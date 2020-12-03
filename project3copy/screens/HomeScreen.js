@@ -24,4 +24,4 @@ const EventStack = createStackNavigator();
     <EventStack.Screen name="Details" component={DetailScreen} />
    </EventStack.Navigator>
   );
-}*/
+}

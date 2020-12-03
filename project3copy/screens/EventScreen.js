@@ -12,8 +12,7 @@ function EventHomeScreen({ navigation }) {
       <TouchableOpacity
         onPress={() => navigation.navigate("EventSecond")}
         style={styles.text}
-      >
-        Second Screen
+      ><Text>Second Screen</Text>
       </TouchableOpacity>
     </View>
   );
@@ -26,7 +25,8 @@ function EventSecondScreen({navigation}) {
       <TouchableOpacity
         onPress={() => navigation.navigate("EventThird")}
         style={styles.text}
-      >Third Screen</TouchableOpacity>
+      ><Text>Third Screen</Text>
+        </TouchableOpacity>
     </View>
   );
 }
@@ -38,7 +38,8 @@ function EventThirdScreen({navigation}) {
       <TouchableOpacity
         onPress={() => navigation.popToTop()}
         style={styles.text}
-      >Return to Events</TouchableOpacity>
+      ><Text>Return to First</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -57,7 +58,6 @@ export default function EventStackScreen() {
 const styles = StyleSheet.create({
   text: {
     color: "grey",
-    border: "tomato solid 3px",
     backgroundColor: "white",
   },
 });

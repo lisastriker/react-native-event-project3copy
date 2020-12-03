@@ -22,7 +22,7 @@ export default class Accordian extends Component{
        <View>
             <TouchableOpacity ref={this.accordian} style={styles.row} onPress={()=>this.toggleExpand()}>
                 <Text style={[styles.title, styles.font]}>{this.props.title}</Text>
-                <Ionicons name={this.state.expanded ? 'ios-cash' : 'caret-down-outline'} size={30} color="grey" />
+                <Ionicons name={this.state.expanded ? "ios-chevron-up-outline" : "ios-chevron-down-outline"} size={30} color="grey" />
             </TouchableOpacity>
             <View style={styles.parentHr}/>
             {
