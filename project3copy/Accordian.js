@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager} from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default class Accordian extends Component{
@@ -9,10 +9,6 @@ export default class Accordian extends Component{
         this.state = { 
           data: props.data,
           expanded : false,
-        }
-
-        if (Platform.OS === 'android') {
-            UIManager.setLayoutAnimationEnabledExperimental(true);
         }
     }
   
