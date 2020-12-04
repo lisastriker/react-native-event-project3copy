@@ -8,36 +8,17 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import RenderText from './RenderText'
 import ContentScreen from './screens/ContentScreen'
 import EventScreen from './screens/EventScreen'
-import Accordian from './Accordian'
+import HomeScreen from './screens/HomeScreen'
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
-const dataArray = [
-  {title:"What is this", data:"I am a basket full of nuts"},
-  {title:"What is my purpose", data:"Squirrels hide their stash in me"},
-  {title:"When do they do this", data:"Right before winter where they then forget where it is."}
-];
+
 
 export default function App() {
-  function HomeScreen({navigation}){
-    return(
-      <View>
-        {renderAccordian()}
-      </View>
-      
-    );
-  }
+  
 
-  function renderAccordian(){
-    let items = [];
-    let item;
-    for(item in dataArray){
-      items.push(<Accordian title={dataArray[item].title} data={dataArray[item].data}></Accordian>)
-      console.log(item)
-    }
-    console.log(items);
-    return items;
-  }
+  
 
   /*const HomeStack = createStackNavigator();
   function HomeStackScreen() {
@@ -49,13 +30,6 @@ export default function App() {
   );
 }*/
 
-  function DetailScreen(){
-    return(
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Detail</Text>
-    </View>
-    );
-  }
 
   return (
     <NavigationContainer>
