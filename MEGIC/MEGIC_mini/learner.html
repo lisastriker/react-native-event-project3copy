@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="learner.css">
+<script src="learner.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+<div class="container">
+<div class="header" id="header">Learner Screen</div>
+<div class="rightBody" id="rightBody">
+<h1>Scenario</h1>
+<p id="text">60yo Chinese male, warded for acute cholecystitis. He was started on fluid therapy, antibiotics and analgesics. Shortly after, he calls for help due to difficulty breathing. You are the house officer (HO) of the general surgery ward. Upon approaching the patient, how would you proceed?
+</p>
+</div>
+<img id="logo" src="picture/practicesim.png">
+
+<div class="leftBody">
+<button type="button" class="collapsible">Respiratory physical examination</button>
+<div class="content">
+  <img src="picture/purselips.jpg">
+  <audio controls id="stridorSound" src="picture/stridor.mp3" ></audio>
+</div>
+
+<button type="button" class="collapsible">Physical findings</button>
+<div class="content">
+<img id="swollenEye" src="picture/swolleneye.png">
+<img id="rashLeg" src="picture/rash.png">
+</div>
+<button type="button" class="collapsible">Vitals</button>
+<div class="content">
+<iframe width="500" height="300" src="https://www.youtube.com/embed/2CXw3LvBtlA">
+</iframe>
+</div>
+</div>
+
+</div>
+<script>
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}</script>
+
+
+
+
+</body>

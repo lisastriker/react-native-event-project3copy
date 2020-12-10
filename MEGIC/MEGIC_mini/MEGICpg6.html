@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="MEGICpg6.css">
+<script src="MEGICpg6.js"></script>
+<script type="text/javascript" src="draggin.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div id="hospitalImage">
+
+<div class="coverContainer">
+<div class="cover">
+<div class="typing">
+While ventilating the patient, you notice some skin changes on the patient's body.
+</div>
+</div>
+</div>
+
+<img id src="picture/beforeheadtilt2.jpg" usemap="#workmap">
+
+<div class="rightInfo" id="rightInfo">
+<p id="taskComplete">Task to be completed</p>
+<ul class="checkListul" id="checkListul">
+<li class="checkListClass" id="list1">Reassess patient</li>
+<li class="checkListClass" id="list2">Administer epinephrine</li>
+</ul>
+</div>
+
+
+
+
+<map name="workmap">
+<area alt="eyes" id="eyes" coords="654,329,34" shape="circle" onclick="revealEye()">
+<area alt="legs" id="legs" coords="298,335,501,313,511,382,307,408" shape="poly" onclick="revealLeg()">
+</map>
+
+
+<img id="swollenEye" src="picture/swolleneye.png">
+<img id="rashLeg" src="picture/rash.png">
+
+<div class="questionContainer" id="questionContainer">
+<form>
+After looking at his symptoms, you diagnose this patient to have:<br>
+<input type="radio" id="UAO" name="diagnosis" onclick="nextQuestion()">Upper Airway Obstruction<br>
+<input type="radio" id="sepsis" name="diagnosis" onclick="nextQuestion()">Sepsis<br>
+<input type="radio" id="anaShock" name="diagnosis" onclick="nextQuestion()">Anaphylactic Shock<br>
+<input type="radio" id="asthma" name="diagnosis" onclick="nextQuestion()">Asthma Exacerbation<br>
+<p id="nextButton" onclick="revealQuestion()">Next Question</p>
+</form>
+<p id="answer1"></p>
+</div>
+
+<div class="questionContainer1" id="questionContainer1">
+<form>
+What is the most appropriate treatment for this patient? <br>
+<input type="radio" id="salbutamol" name="treatment" onclick="nextQuestion1()">Salbutamol<br>
+<input type="radio" id="adrenaline" name="treatment" onclick="nextQuestion1()">Adrenaline<br>
+<input type="radio" id="glucagon" name="treatment" onclick="nextQuestion1()">Glucagon<br>
+<input type="radio" id="antibiotic" name="treatment" onclick="nextQuestion1()">Antibiotics<br>
+<input type="radio" id="diuretics" name="treatment" onclick="nextQuestion1()">Diuretics<br>
+<p id="nextButton1" onclick="revealQuestion1()">Next Question</p>
+</form>
+<p id="answer2"></p>
+</div>
+
+<div class="questionContainer2" id="questionContainer2">
+<form>
+How would you administer the adrenaline? <br>
+<input type="radio" id="IM" name="administer" onclick="nextQuestion2()">Intramuscular(IM)<br>
+<input type="radio" id="IV" name="administer" onclick="nextQuestion2()">Intravenous (IV)<br>
+<p id="nextButton2" onclick="revealQuestion2()">Next Question</p>
+</form>
+<p id="answer3"></p>
+</div>
+
+
+<div class="syringePage" id="syringePage">
+<div class="epinephrineContainer">
+<img src="picture/epinephrine.png" id="epinephrine1000">
+</div>
+<p id="epinephrineDescription">This is a vial of 1:1000 of epinephrine, drag the black plunger to select the amount to administer.</p>
+<div class="syringeContainer" id="syringeContainer">
+<p id="frontSyringe"></p>
+<p id="endSyringe"></p>
+<div class="slideContainer" id="slidebar">
+<input type="range" min="0" step="0.1" max="1" value="0.2" class="slider" id="myRange">
+<p id="litres">ml : <span id="slideAmount"></span> <p id="nextButton3" onclick="administerAdrenaline()">Administer this amount</p></p>
+</div>
+</div>
+</div>
+
+
+<div class="circle">
+<div class="nextIcon" id="nextIcon">
+<a href="MEGICpg7.html"id="nextPage">Next</a>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+<script type="text/javascript" src="draggin.min.js">
+</script>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("slideAmount");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+output.innerHTML = this.value;
+	sliderFunction();
+}
+
+</script>
+
+<![if IE]>
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("slideAmount");
+output.innerHTML = slider.value;
+
+slider.onchange = function() {
+output.innerHTML = this.value;
+	sliderFunction();
+}
+
+</script>
+<![endif]>
+
+</body>
+</html>

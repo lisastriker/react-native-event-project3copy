@@ -1,0 +1,319 @@
+body, html {
+  min-height: 100%;
+  margin: 0px 0px 0px 0px;
+  overflow:scroll;
+}
+/*Hospital frame*/
+form{
+	align-content:center;
+}
+
+.coverContainer {
+	height:8%;
+	padding:1% 1% 1% -1%;
+	font-family:monospace;
+	width:100%;
+	opacity:0.8;
+	background-color:black;
+	color:white;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+.cover, .cover1{
+	padding-top: 0.5%;
+	padding-left:2%;
+	display:flex;
+	animation: type 4s steps(7, end) forwards;
+	-webkit-animation: type 4s steps(7,end) forwards;
+}
+.typing{
+	font-size:1.2em;
+	position:relative;
+	display:inline-block;
+	width: 100%;
+	white-space:nowrap;
+    overflow:hidden;
+	 
+}
+
+/*Right container*/
+.checkListul {
+  list-style-type: none;
+  padding-left:0px;
+  display:initial;
+}
+
+.checkListClass.done:before{
+	content:url("picture/greentick.png");
+}
+
+.checkListClass{
+	font-family:monospace;
+	visibility:visible;
+	font-size:1.2em;
+}
+
+.rightInfo{
+	padding-left:2%;
+	background-color:white;
+	opacity:90%;
+    display: block;
+    position: absolute;
+    right: 0%;
+    height: 20%;
+    width: 20%;
+	top:16%;
+    z-index: 3;
+}
+
+
+#taskComplete{
+	font-family: monospace;
+	font-size:1.2em;
+}
+
+#hospitalImage {
+	position:absolute;
+
+}
+
+#monitor{
+	cursor:pointer;
+}
+
+#patient{
+	cursor:pointer;
+}
+
+.hide {
+	display:none;
+}
+
+/*Popups*/
+.vitalsContainer {
+	top: 7%;
+    left: 5%;
+	position:absolute;
+	z-index:1;
+	
+}
+
+#vitalsPopup{
+	position:absolute;
+	visibility:hidden;
+	width: 350px;
+    height: 220px;
+}
+
+
+
+.personContainer{
+    position: absolute;
+    top: 37%;
+    left: 33%;
+    width: 35%;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+#personPopup{
+    margin: 0px;
+	text-align: center;
+	background: white;
+    visibility: hidden;
+    border: 2px solid red;
+    padding: 2%;
+}
+
+/*questions at bottom*/
+form{
+	color:white;
+	display:inline-block;
+	position:relative;
+	z-index:1;
+	text-align:left;
+}
+
+#nextQuestion, #nextQuestion1{
+	position: relative;
+    float: right;
+	background-color:black;
+	border:white solid 2px;
+	cursor:pointer;
+	color:white;
+	font-size:1em;
+	display:block;
+	bottom:0;
+	width:22%;
+}
+
+ #nextQuestion2, #checkAnswer3{
+	position: relative;
+    float: right;
+	background-color:black;
+	border:white solid 2px;
+	cursor:pointer;
+	color:white;
+	font-size:1em;
+	display:block;
+	bottom:0;
+	width:40%;
+	margin-bottom:0;
+ }
+
+#answer, #answer2, #answer2a, #answer3{
+	margin-top:5px;
+	margin-bottom:5px;
+	color:white;
+}
+
+
+.questionContainer{
+	font-family: monospace;
+    font-size: 1.2em;
+	text-align:center;
+	position:absolute;
+	background-color:black;
+	width:100%;
+	opacity:0.8;
+	bottom:0;
+	left:0;
+	z-index:2;
+	padding: 2% 0% 2% 0%;
+	height: 18%;
+}
+
+
+
+.questionContainer1, .questionContainer2{
+	font-family: monospace;
+    font-size: 1.2em;
+	text-align:center;
+	visibility:hidden;
+	position:absolute;
+	background-color:black;
+	width:100%;
+	opacity:0.8;
+	bottom:0;
+	left:0;
+	z-index:2;
+	padding: 1.5% 0% 1.5% 0%;
+	height:19%;
+}
+
+.questionContainer3{
+	font-family: monospace;
+    font-size: 1.2em;
+	text-align:center;
+	visibility:hidden;
+	position:absolute;
+	background-color:black;
+	width:100%;
+	opacity:0.8;
+	bottom:0;
+	left:0;
+	z-index:2;
+	padding: 1.5% 0% 1.5% 0%;
+	height:24%;
+}
+
+
+@-moz-keyframes greenPulse{
+	from { -moz-box-shadow: 0 0 1px #e3230e; }
+50% {  -moz-box-shadow: 0 0 25px #e64845; }
+to { -moz-box-shadow: 0 0 9px #c22011; }
+	
+}
+
+
+@-webkit-keyframes greenPulse {
+from { -webkit-box-shadow: 0 0 1px #e3230e; }
+50% {  -webkit-box-shadow: 0 0 25px #e64845; }
+to {-webkit-box-shadow: 0 0 9px #c22011; }
+}
+
+@keyframes greenPulse{
+	from { box-shadow: 0 0 1px #e3230e; }
+50% {  box-shadow: 0 0 25px #e64845; }
+to { box-shadow: 0 0 9px #c22011; }
+	
+}
+
+
+
+.circle {
+	position:absolute;
+	bottom: 28%;
+    right: 4%;
+	display:flex;
+}
+
+#circle{
+	visibility:hidden;
+}
+
+.nextIcon {
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  z-index: 5;
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation: greenPulse 2s infinite;
+  -o-animation: greenPulse 2s infinite;
+  animation: greenPulse 2s infinite;
+  text-align:center;
+  font-size:2em;
+}
+
+#nextPage{
+	color: red;
+	text-decoration:none;
+}
+
+@keyframes type {
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+}
+
+@-webkit-keyframes type {
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+	
+}
+
+@-moz-keyframes type{
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+	
+}
+
+@-o-keyframes type{
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+}
+
+

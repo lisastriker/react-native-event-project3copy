@@ -1,0 +1,151 @@
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.container{
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+
+.header{
+    width: 97%;
+	visibility:hidden;
+	text-align: center;
+    background-color: #003D7C ;
+    color: white;
+    font-size: 1.4rem;
+    padding: 20px 0px 20px 0px;
+    margin: 1%;
+    box-sizing: border-box;
+}
+
+.leftBody{
+	visibility:hidden;
+	float:left;
+	margin: 1%;
+	width:65%
+}
+
+.rightBody{
+    height: 46%;
+	visibility:hidden;
+	margin:1%;
+	box-sizing:border-box;
+	padding: 0px 30px 30px 30px;
+	float:left;
+	width:30%;
+	background-color: #eee;
+	border: solid 2px black;
+	border-radius:5px;
+	
+}
+
+#logo{
+	width:30%;
+	position:absolute;
+	bottom:5%;
+	left:0;
+	visibility:hidden;
+}
+/*Modal*/
+.button1{
+    box-sizing: border-box;
+    display: inline-block;
+    text-decoration: none;
+    font-family: monospace;
+    border: solid 2px black;
+    height: 10%;
+    width: 49%;
+    text-align: center;
+    background-color: rgb(180,180,180);
+    color: black;
+    font-size: 1.2em;
+    margin-top: 0px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#learner{
+	background-color:#EF7C00;
+	color:white;
+}
+
+#facilitator{
+	background-color: #003D7C;
+	color:white;
+}
+
+.modal{
+    border: solid black 4px;
+    height: 30%;
+    width: 40%;
+    position: absolute;
+    z-index: 2;
+    top: 30%;
+    left: 30%;
+    margin: auto;
+    background-position: center;
+    box-sizing: border-box;
+    background-color: #bbb;
+	border-radius:10px;
+	opacity:95%;
+}
+
+.innerModal{
+	border-radius:10px;
+	position:relative;
+	height:90%;
+	width:90%;
+	top:5%;
+	left:5%;
+}
+
+.buttonContainer{
+    padding: 0 5% 0 5%;
+}
+
+.rightInfo{
+	padding-left:2%;
+	background-color:white;
+	opacity:90%;
+    display: block;
+    position: absolute;
+    right: 0%;
+    height: 30%;
+    width: 30%;
+	top:16%;
+    z-index: 3;
+}
+
+#role{
+    font-size: 1.5rem;
+    margin: 10% 0 10% 0;
+    padding: 0px 10px 5px 10px;
+}
+
+#text{
+	font-size:1.2rem;
+}

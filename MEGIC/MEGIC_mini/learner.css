@@ -1,0 +1,72 @@
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+#swollenEye, #rashLeg{
+	width:300px;
+	height:200px;
+	display:inline-block;
+}
+
+.header{
+    width: 97%;
+	text-align: center;
+    background-color: #EF7C00 ;
+    color: white;
+    font-size: 1.4rem;
+    padding: 20px 0px 20px 0px;
+    margin: 1%;
+    box-sizing: border-box;
+}
+
+.leftBody{
+	float:left;
+	margin: 1%;
+	width:65%
+}
+
+.rightBody{
+    height: 46%;
+	margin:1%;
+	box-sizing:border-box;
+	padding: 0px 30px 30px 30px;
+	float:left;
+	width:30%;
+	background-color: #eee;
+	border: solid 2px black;
+	border-radius:5px;
+	
+}
+
+#logo{
+	width:30%;
+	position:absolute;
+	bottom:5%;
+	left:0;
+}
+
+#text{
+	font-size:1.2rem;
+}

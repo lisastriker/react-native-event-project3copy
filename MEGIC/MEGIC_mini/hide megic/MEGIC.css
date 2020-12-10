@@ -1,0 +1,157 @@
+.show {display: block;}
+
+/*fonts*/
+/*did not use this font*/
+@font-face {
+  font-family: 'Early-GameBoy';
+  src: url('fonts/Early-GameBoy.eot?#iefix') format('embedded-opentype'),
+  url('fonts/Early-GameBoy.woff') format('woff'), url('fonts/Early-GameBoy.ttf')
+  format('truetype'), url('fonts/Early-GameBoy.svg#Early-GameBoy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  min-height: 100%;
+  margin: 0px 0px 0px 0px;
+  overflow:scroll;
+}
+
+#hospitalImage{
+	position:absolute;
+}
+/*Hospital frame*/
+form{
+	align-content:center;
+}
+
+p{
+	font-family: monospace;
+	font-size:1em;
+}
+
+#taskComplete{
+	font-family: monospace;
+	font-size:1.2em;
+}
+
+ul {
+  list-style-type: none;
+  padding-left:0px;
+}
+li.done:before{
+	content:url("picture/greentick.png");
+}
+
+li{
+	font-family:monospace;
+	visibility:visible;
+	font-size:1.2em;
+}
+
+
+.rightInfo{
+	padding-left:2%;
+	background-color:white;
+	opacity:90%;
+    display: block;
+    position: absolute;
+    right: 0%;
+    height: 30%;
+    width: 30%;
+	top:16%;
+    z-index: 3;
+}
+
+#role{
+	text-align:center;
+	font-size:2em;
+}
+
+
+#monitor{
+	cursor:pointer;
+}
+
+#chest{
+	cursor:pointer;
+}
+
+#mouth{
+	cursor:pointer;
+}
+
+.hide {
+	display:none;
+}
+
+.vitalsContainer {
+	top: 7.5%;
+    left: 4%;
+	display:flex; /*makes it flexi with margin:auto*/
+	position:absolute;
+	z-index:2;
+	width: 350px;
+    height: 220px;
+}
+
+.vitalsContainer .popuptext{
+	margin:auto;
+	visibility:hidden;
+	z-index:2;
+	width: 350px;
+    height: 220px;
+}
+
+.vitalsContainer .showThis{
+	visibility:visible;
+	z-index:2;
+}
+
+.stridorContainer{
+	width: 20%;
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    bottom: 42%;
+    right: 25%;
+}
+
+.stridorContainer .popupaudio{
+	margin:auto;
+	visibility:hidden;
+	z-index:2;
+}
+
+.stridorContainer .showThisOne {
+	visibility:visible;
+	z-index:2;
+}
+
+.radioForm {
+	display:block;
+	z-index:1;
+}
+
+.purselipsContainer{
+	display:flex;
+	position:absolute;
+	top:35%;
+	left:55%;
+	z-index:0;
+}
+
+.purselipsContainer .popuplips{
+	width:100px;
+	visibility:hidden;
+	z-index:3;
+	margin: auto;
+    padding-right: 5%;
+}
+
+
+.purselipsContainer .showThisTwo {
+	visibility:visible;
+	z-index:2;
+}
+

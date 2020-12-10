@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="MEGICpg3.css">
+<script src="MEGICpg3.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+
+<div id="hospitalImage">
+<script type="text/javascript" src="draggin.min.js"></script>
+<div class="coverContainer">
+<div class="cover">
+<div class="typing">
+Shortly after, the patient soon drifts in and out of consciousness and is barely arousable. 
+</div>
+</div>
+
+<div class="cover1">
+<div class="typing">
+Respiratory efforts seem decreased.
+</div>
+</div>
+</div>
+
+<div class="rightInfo">
+<p id="taskComplete">Task to be completed</p>
+<ul class="checkListul">
+<li class="checkListClass" id="list1">Reassess ABC's</li>
+<li class="checkListClass" id="list2">Check Vitals</li>
+</ul>
+</div>
+
+<img src="picture/patientMEGICLyingDownpg3.png" usemap="#workmap">
+
+<map name="workmap" class="workmapOutlines">
+	<area id="monitor" shape="rect" coords="168,299,273,364" alt="monitor" onclick="vitalsReveal()">
+	<area id="patient" shape="rect" coords="340,326,693,432" alt="patient" onclick="personReveal()"> 
+</map>
+
+
+<div class = "vitalsContainer">
+	<img id="vitalsPopup" src="picture/vitalsFalling.jpg">
+</div>
+<div class="personContainer">
+<p class="personReveal" id="personPopup">Stirs upon touching him, breathing becomes shallow</p>
+</div>
+
+<div class="questionContainer" id="questionContainer">
+<form>
+In your reassessment of this patient, is his airway patent or protected?<br>
+<input type="radio" id="patentYes" name="patent" onclick="checkAnswer()">Yes<br>
+<input type="radio" id="patentNo" name="patent" onclick="checkAnswer()">No
+<p id="nextQuestion" onclick="nextQuestion()">Next Question</p>
+</form>
+<p id="answer"></p>
+</div>
+
+<div class="questionContainer1" id="questionContainer1">
+<form>
+In your reassessment of this patient is his breathing optimized?<br>
+<input type="radio" id="breathingYes" name="breathing" onclick="checkAnswer2()">Yes<br>
+<input type="radio" id="breathingNo" name="breathing" onclick="checkAnswer2()">No
+<p id="nextQuestion1" onclick="nextQuestion1()">Next Question</p>
+</form>
+<p id="answer2"></p>
+</div>
+
+<div class="questionContainer2" id="questionContainer2">
+<form>
+What would you like to administer?<br>
+<input type="radio" id="adminOxygen" name="whatAdmin" onclick="checkAnswer2a()">Supplemental Oxygen<br>
+<input type="radio" id="adminSalbultamol" name="whatAdmin" onclick="checkAnswer2a()">Salbultamol<br>
+<input type="radio" id="adminNIV" name="whatAdmin" onclick="checkAnswer2a()">Non-invasive ventilation<br>
+<input type="radio" id="adminSteriod" name="whatAdmin" onclick="checkAnswer2a()">Corticosteroid
+<p id="nextQuestion2" onclick="nextQuestion2()">Next Question</p>
+</form>
+<p id="answer2a"></p>
+</div>
+
+<div class="questionContainer3" id="questionContainer3">
+<form>
+How would you like to administer the oxygen?<br>
+<input type="radio" id="nasalProngs" name="howAdmin">Nasal Prongs<br>
+<input type="radio" id="simpleFaceMask" name="howAdmin">Simple Face Mask<br>
+<input type="radio" id="nonRebreatherMask" name="howAdmin">Non-rebreather Mask<br>
+<input type="radio" id="venturiMask" name="howAdmin">Venturi Mask<br>
+<input type="radio" id="bagValveMask" name="howAdmin">Bag Valve Mask<br>
+<input type="radio" id="ett" name="howAdmin">Endotracheal Intubation
+<p id="checkAnswer3" onclick="checkAnswer3()">Check Answer</p>
+</form>
+<p id="answer3"></p>
+</div>
+
+
+
+
+<div class="circle" id="circle">
+<div class="nextIcon">
+<a href="MEGICpg4.html"id="nextPage">Next</a>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="MEGIC.css">
+<script src="MEGIC.js"></script>
+<script type="text/javascript" src="draggin.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+
+<div id="hospitalImage" >
+
+
+<div class="rightInfo">
+<p id="taskComplete">Task to be completed</p>
+<ul>
+<li id="list1">Vitals looked at</li>
+<li id="list2">Respiratory distress identified</li>
+<li id="list3">Wheezing identified</li>
+</ul>
+</div>
+
+<div class="coverContainer">
+<div class="cover">
+<div class="typing">
+You are the house officer (HO) of the general surgery ward. 
+</div>
+</div>
+
+<div class="cover1">
+<div class="typing">
+A 60yo Chinese male is warded for acute cholecystitis.
+</div>
+</div>
+
+<div class="cover2">
+<div class="typing">
+He was started on fluid therapy, antibiotics and analgesics. 
+</div>
+</div>
+
+<div class="cover3">
+<div class="typing">
+Shortly after, he calls for help due to difficulty breathing. 
+</div>
+</div>
+
+<div class="cover4">
+<div class="typing2">
+Upon approaching the patient...
+</div>
+</div>
+</div>	
+	
+<img src="picture/patientMEGIC4.jpg" id="hospitalImagePicture" usemap="#workmap">
+
+<map name="workmap" class="workmapOutlines">
+	<area id="chest" shape="circle" coords="504,424,29" alt="chest" onclick="audioOpenClick()"> 
+	<area id="monitor" shape="rect" coords="158,330,273,406" alt="monitor" onclick="onOpenClick()">
+	<area id="mouth" shape="circle" coords="498,338,28" alt="mouth" onclick="purselipsOpenClick()">
+</map>
+
+
+
+<div class="questionContainer" id="questionContainer">
+<form class="form1">
+The patient has : <br>
+<input type="radio" id="stertor" name="patientHas" value="stertor" onclick="checkAnswer()">Stertor<br>
+<input type="radio" id="wheeze" name="patientHas" value="wheeze" onclick="checkAnswer()">Wheeze<br> 
+<input type="radio" id="stridor" name="patientHas" value="stridor" onclick="checkAnswer()">Stridor<br> 
+<input type="radio" id="crepitations" name="patientHas" value="crepitations" onclick="checkAnswer()">Crepitations<br> 
+<input type="radio" id="clearLungSounds" name="patientHas" value="clearLungSounds" onclick="checkAnswer()">Clear Lung Sounds<br>
+</form>
+<div class="form1answer">
+<button id="nextQuestion" onclick="revealQuestion2()">Next Question</button>
+<p id="answer1">The correct answer is that there is no correct answer</p>
+</div>
+</div>
+
+<div class="questionContainer2" id="questionContainer2">
+<form class="form2">
+Which vitals are abnormal:<br>
+<input type="checkbox" id="heartrate" name="patientVitals" value="heartrate">Heart Rate<br>
+<input type="checkbox" id="temperature" name="patientVitals1" value="temperature">Temperature<br> 
+<input type="checkbox" id="respiratoryrate" name="patientVitals2" value="respiratoryrate">Respiratory Rate<br> 
+<input type="checkbox" id="bloodpressure" name="patientVitals3" value="bloodpressure">Blood Pressure<br> 
+</form>
+<button id="checkAnswer2" onclick="checkAnswer2()">Check Answer</button>
+<p id="answer2"></p>
+<button id="nextQuestion2" onclick="revealQuestion3()">Next Question</button>
+</div>
+
+<div class="questionContainer3" id="questionContainer3">
+<form class="form3">
+Who would you like to call for help?<br>
+<input type="radio" id="nurse" name="patientCall" value="nurse">Senior Nurse<br> 
+<input type="radio" id="surgery" name="patientCall" value="surgery">General Surgery MO<br>
+<input type="radio" id="respiratoryMedicine" name="patientCall" value="respiratoryMedicine">General Respiratory Medicine MO<br>
+<input type="radio" id="anaesthesia" name="patientCall" value="anaesthesia">Anaesthesia MO<br>
+<input type="radio" id="otolaryngology" name="patientCall" value="otolaryngology">Otolaryngology MO<br>
+</form>
+<button id="nextQuestion3" onclick="checkAnswer3()">Check Answer</button>
+<p id="answer3"></p>
+</div>
+
+
+<div class="vitalsContainer">
+<img src="picture/BVMValve.png" class="popuptext" id="vitalsPopup">
+</div>
+<div class="purselipsContainer">
+<img src="picture/purselips.jpg" class="popuplips" id="purselipsPopup">
+</div>
+<div class="stridorContainer">
+<audio controls id="stridorSound" class="popupaudio" src="picture/stridor.mp3"></audio>
+</div>
+
+<div class="circle" id="circle">
+<div class="helpIcon">
+<a href="megic2new.html"id="nextPage">Next</a>
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript" src="draggin.min.js"></script>
+</body>
+</html>

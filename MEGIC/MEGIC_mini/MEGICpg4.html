@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="MEGICpg4.css">
+<script src="MEGICpg4.js"></script>
+<script type="text/javascript" src="draggin.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div id="hospitalImage">
+
+<div class="coverContainer">
+<div class="cover">
+<div class="typing">
+Please assemble the bag-valve-mask apparatus below.
+</div>
+</div>
+</div>
+<img src="picture/patientLyingDownNoBox.jpg" usemap="#workmap">
+
+<div class="assembleBag">
+<p id="assembleLine">Drag and assemble Bag Valve Mask Here</p>
+</div>
+
+<div class="answerContainer" id="answerContainer">
+<p id="answer">Your Bag Valve Mask should look like this.</p>
+<p id="tapAnswer" onclick="revealBVM()">Press to show answer</p>
+</div>
+<div class="assembleBagImageContainer">
+<img id="assembledAnswer" src="picture/BVMAssembled.png">
+</div>
+
+<div class="bagValveMaskContainer">
+<ul class="columnformat">
+<li><img class="draggable tube" id="tube" src="picture/BVMTube.png"></li>
+<li><img class="draggable mask" id="mask" src="picture/BVMMask.png" onclick="checkForPress()"></li>
+<li><img class="draggable bag" id="bag" src="picture/BVMBag.png" onclick="checkForPress()"></li>
+<li><img class="draggable valve2" id="valve2" src="picture/BVMValve2.png" onclick="checkForPress()">
+<li><img class="draggable valve" id="valve" src="picture/BVMValve.png" onclick="checkForPress()"></li>
+<li><img class="draggable resevoir" id="resevoir" src="picture/BVMResevoir.png"></li>
+</ul>
+</div>
+
+<div class="circle">
+<div class="nextIcon">
+<a href="MEGICpg5.html"id="nextPage">Next</a>
+</div>
+</div>
+</div>
+
+<script type="module">
+import 'https://cdn.interactjs.io/v1.9.20/auto-start/index.js'
+import 'https://cdn.interactjs.io/v1.9.20/actions/drag/index.js'
+import 'https://cdn.interactjs.io/v1.9.20/actions/resize/index.js'
+import 'https://cdn.interactjs.io/v1.9.20/modifiers/index.js'
+import 'https://cdn.interactjs.io/v1.9.20/dev-tools/index.js'
+import interact from 'https://cdn.interactjs.io/v1.9.20/interactjs/index.js'
+
+interact('.draggable')
+  .draggable({
+    // enable inertial throwing
+    inertia: true,
+    // keep the element within the area of it's parent
+    modifiers: [
+      interact.modifiers.restrictRect({
+        endOnly: true
+      })
+    ],
+    // enable autoScroll
+    autoScroll: true,
+
+    listeners: {
+      // call this function on every dragmove event
+      move: dragMoveListener,
+
+      // call this function on every dragend event
+      end (event) {
+        var textEl = event.target.querySelector('p')
+
+        textEl && (textEl.textContent =
+          'moved a distance of ' +
+          (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
+                     Math.pow(event.pageY - event.y0, 2) | 0))
+            .toFixed(2) + 'px')
+      }
+    }
+  })
+
+function dragMoveListener (event) {
+  var target = event.target
+  // keep the dragged position in the data-x/data-y attributes
+  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+
+  // translate the element
+  target.style.webkitTransform =
+    target.style.transform =
+      'translate(' + x + 'px, ' + y + 'px)'
+
+  // update the posiion attributes
+  target.setAttribute('data-x', x)
+  target.setAttribute('data-y', y)
+}
+
+// this function is used later in the resizing and gesture demos
+window.dragMoveListener = dragMoveListener
+
+</script>
+
+
+</body>
+</html>

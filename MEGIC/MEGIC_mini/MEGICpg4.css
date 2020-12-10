@@ -1,0 +1,236 @@
+body, html {
+  min-height: 100%;
+  margin: 0px 0px 0px 0px;
+  overflow:scroll;
+  
+}
+
+/*Hospital frame*/
+
+#hospitalImage {
+	position:absolute;
+	/*touch-action: none;
+	user-select: none;
+	-webkit-user-select:none;
+	-webkit-touch-action:none;*/
+
+}
+
+
+.coverContainer {
+	height:8%;
+	padding:1% 1% 1% -1%;
+	font-family:monospace;
+	width:100%;
+	opacity:0.8;
+	background-color:black;
+	color:white;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+.cover, .cover1{
+	padding-top: 0.5%;
+	padding-left:2%;
+	display:flex;
+	animation: type 4s steps(7, end) forwards;
+	-webkit-animation: type 4s steps(7,end) forwards;
+}
+.typing{
+	font-size:1.2em;
+	position:relative;
+	display:inline-block;
+	width: 100%;
+	white-space:nowrap;
+    overflow:hidden;
+	 
+}
+#assembleLine{
+	margin-left: 25%;
+}
+.assembleBag{
+	position:absolute;
+	bottom:0px;
+	left:0;
+	height:22%;
+	width:50%;
+	background:white;
+	opacity:0.7;
+	border:solid 2px black;
+}
+
+.assembleBagImageContainer{
+	position:absolute;
+	bottom:0px;
+	left:50%;
+	height:22%;
+	width:50%;
+	background:white;
+	opacity:0.7;
+	border:solid 2px black;
+}
+
+#tapAnswer{
+	    padding: 4% 0% 4% 0;
+    font-size: 1.5em;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    top: 20%;
+}
+
+#assembledAnswer{
+	visibility:hidden;
+	height:100%;
+	margin:auto;
+	display:flex;
+}
+
+
+
+#answer{
+	position:absolute;
+	z-index:3;
+	width:100%;
+}
+
+.answerContainer{
+	position:absolute;
+	bottom:0px;
+	left:50%;
+	height:22%;
+	width:50%;
+	background:white;
+	z-index:1;
+	opacity:0.7;
+	border:solid 2px black;
+	text-align: center;
+}
+
+
+
+.bagValveMaskContainer{
+    position: absolute;
+    bottom: 21%;
+    background: white;
+}
+
+#mask, #valve, #bag, #valve2, #resevoir, #tube{
+	height:100px;
+	width:100px;
+	touch-action: none;
+	user-select: none;
+	-webkit-user-select:none;
+	-webkit-touch-action:none;
+}
+
+
+.columnformat {
+	padding-left: 0;
+	position:relative;
+	display: inline-flex;
+	width:100%;
+	margin:10px 0px 10px 0px;
+}
+/*unorderedlist column*/
+ul{
+	column-count:5;
+	-webkit-column-count:4;
+	list-style-type:none;
+}
+
+li {
+	display:inline-block;
+	border-color:black;
+	border:solid 4px;
+}
+
+
+@-moz-keyframes greenPulse{
+	from { -moz-box-shadow: 0 0 1px #e3230e; }
+50% {  -moz-box-shadow: 0 0 25px #e64845; }
+to { -moz-box-shadow: 0 0 9px #c22011; }
+	
+}
+
+
+@-webkit-keyframes greenPulse {
+from { -webkit-box-shadow: 0 0 1px #e3230e; }
+50% {  -webkit-box-shadow: 0 0 25px #e64845; }
+to {-webkit-box-shadow: 0 0 9px #c22011; }
+}
+
+@keyframes greenPulse{
+	from { box-shadow: 0 0 1px #e3230e; }
+50% {  box-shadow: 0 0 25px #e64845; }
+to { box-shadow: 0 0 9px #c22011; }
+	
+}
+
+
+.circle {
+	position:absolute;
+	bottom: 28%;
+    right: 4%;
+	display:flex;
+}
+
+.nextIcon {
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  z-index: 5;
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation: greenPulse 2s infinite;
+  -o-animation: greenPulse 2s infinite;
+  animation: greenPulse 2s infinite;
+  text-align:center;
+  font-size:2em;
+}
+
+@keyframes type {
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+}
+
+@-webkit-keyframes type {
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+	
+}
+
+@-moz-keyframes type{
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+	
+}
+
+@-o-keyframes type{
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+}
+	
+

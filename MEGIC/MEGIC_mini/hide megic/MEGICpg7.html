@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="MEGICpg7.css">
+<script src="MEGICpg7.js"></script>
+<script type="text/javascript" src="draggin.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div id="hospitalImage">
+
+<div class="coverContainer">
+<div class="cover">
+<div class="typing">
+Patient is stable, sitting up 45 deg and breathing voluntarily now. Click on monitor to check his vitals.
+
+</div>
+</div>
+
+<div class="cover1">
+<div class="typing">
+Your consultant arrives and wants to find out
+</div>
+</div>
+</div>
+<img id src="picture/patientsittingupred.jpg" usemap="#workmap">
+
+
+
+<div class="vitalContain">
+<img src="picture/vitalsreturn.jpg" class="popuptext" id="vitalsPopup">
+</div>
+
+<div class="questionContainer" id="questionContainer">
+<form>
+What was the cause of his anaphylaxis?<br>
+<input type="radio" id="drug" name="ana" onclick="nextQuestion()">Drug Induced<br>
+<input type="radio" id="food" name="ana" onclick="nextQuestion()">Food<br>
+<input type="radio" id="venom" name="ana" onclick="nextQuestion()">Venoms<br>
+<input type="radio" id="environment" name="ana" onclick="nextQuestion()">Environment<br>
+<input type="radio" id="medCondition" name="ana" onclick="nextQuestion()">Medical Condition<br>
+<p id="nextButton" onclick="nextQuestion1()">Next Question</p>
+</form>
+<p id="answer1"></p>
+</div>
+
+<div class="questionContainer1" id="questionContainer1">
+<form>
+Where should the patient go to now?<br>
+<input type="radio" id="ward" name="patientGo" onclick="checkAnswer2()">Stay in the ward and discharge after 24 hour observation<br>
+<input type="radio" id="emergency" name="patientGo" onclick="checkAnswer2()">Refer to Emergency department observation unit<br>
+<input type="radio" id="hdu" name="patientGo" onclick="checkAnswer2()">General Surgery (GS) High Dependency Unit (HDU)<br>
+<input type="radio" id="discharge" name="patientGo" onclick="checkAnswer2()">Discharge after stabilization<br>
+<p id="nextButton1" onclick="nextQuestion2()">Next Question</p>
+</form>
+<p id="answer2"></p>
+</div>
+
+<div class="questionContainer2" id="questionContainer2">
+<form>
+Which department should you refer patient to?<br>
+<input type="radio" id="derma" name="refer" onclick="checkAnswer3()">Dermatoglogist<br>
+<input type="radio" id="immuno" name="refer" onclick="checkAnswer3()">Allergist/Immunologist<br>
+<input type="radio" id="hema" name="refer" onclick="checkAnswer3()">Hematology<br>
+<input type="radio" id="intermalMed" name="refer" onclick="checkAnswer3()">Internal Medicine<br>
+<p id="nextButton2" onclick="nextQuestion3()">Next Question</p>
+</form>
+<p id="answer3"></p>
+</div>
+
+
+<div class="tableContainer" id="tableContainer">
+<div class="table">
+<table>
+<tr>
+<th>Match each medication with their respective purpose</th>
+<th>Drug Name</th>
+</tr>
+
+<tr>
+<td>1. To prevent biphasic or protracted reactions</td>
+<td><select name="medication" id="medication">	
+    <option value="Cortico">Corticosteroid</option>
+    <option value="H1Anti">H1 Antihistamines</option>
+	<option value="H2Anti">H2 Antihistamines</option>
+    <option value="NebBroncho">Nebulized Bronchodilators</option>
+  </select></td>
+</tr>
+
+<tr>
+<td>2. For persistent bronchospasm</td>
+<td><select name="medication" id="medication1">
+    <option value="Cortico">Corticosteroid</option>
+    <option value="H1Anti">H1 Antihistamines</option>
+	<option value="H2Anti">H2 Antihistamines</option>
+    <option value="NebBroncho">Nebulized Bronchodilators</option>
+  </select></td>
+</tr>
+
+<tr>
+<td>3. To relieve itches and hives</td>
+<td><select name="medication" id="medication2">
+    <option value="Cortico">Corticosteroid</option>
+    <option value="H1Anti">H1 Antihistamines</option>
+	<option value="H2Anti">H2 Antihistamines</option>
+    <option value="NebBroncho">Nebulized Bronchodilators</option>
+  </select></td>
+</tr>
+
+
+<tr>
+<td>4. For persistent symtpom unresponsive to H1 antihistamines</td>
+<td><select name="medication" id="medication3">
+    <option value="Cortico">Corticosteroid</option>
+    <option value="H1Anti">H1 Antihistamines</option>
+	<option value="H2Anti">H2 Antihistamines</option>
+    <option value="NebBroncho">Nebulized Bronchodilators</option>
+  </select></td>
+</tr>
+
+<tr>
+<td><p class="changeClass" id="matchNumberAnswer"></p></td>
+<td><button onclick="matchAnQ()">Submit Answers</button></td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<div class="endGame" id="endGame">
+<p id="endGameSentence">You're right! Congrats! You have reached the end of the game!</p>
+</div>
+
+<div class="rightInfo" id="rightInfo">
+<p id="taskComplete">Task's completed</p>
+<ul>
+<li id="list1">Patient's vitals checked</li>
+<li id="list2">Respiratory distress identified</li>
+<li id="list3">Wheezing identified</li>
+<li>Oxygen administered using rebreather mask</li>
+<li>Upon further deteoriation of condition, reassess ABC's</li>
+<li>Vitals reassessed</li>
+<li>Bag Vave Mask assembled</li>
+<li>Patient position optimized</li>
+<li>Appropriate mask size chosen</li>
+<li>BVM ventilation carried out</li>
+<li>Patient diagnosed</li>
+<li>Epinephrine administered</li>
+<li>Patient sent to GS-HDU</li>
+<li>Patient referred to Allergist</li>
+</ul>
+</div>
+
+
+
+
+</div>
+</body>
+<html>

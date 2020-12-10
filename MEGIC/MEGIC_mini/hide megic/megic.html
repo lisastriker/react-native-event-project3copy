@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="MEGIC.css">
+<script src="MEGIC.js"></script>
+<script type="text/javascript" src="draggin.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+
+<div id="hospitalImage" >
+
+
+<div class="rightInfo">
+<p id="taskComplete">Task to be completed</p>
+<ul>
+<li id="list1">Vitals looked at</li>
+<li id="list2">Respiratory distress identified</li>
+<li id="list3">Wheezing identified</li>
+</ul>
+</div>
+
+<div class="coverContainer">
+<div class="cover">
+<div class="typing">
+You are the house officer (HO) of the general surgery ward. 
+</div>
+</div>
+
+<div class="cover1">
+<div class="typing">
+A 60yo Chinese male is warded for acute cholecystitis.
+</div>
+</div>
+
+<div class="cover2">
+<div class="typing">
+He was started on fluid therapy, antibiotics and analgesics. 
+</div>
+</div>
+
+<div class="cover3">
+<div class="typing">
+Shortly after, he calls for help due to difficulty breathing. 
+</div>
+</div>
+
+<div class="cover4">
+<div class="typing2">
+Upon approaching the patient...
+</div>
+</div>
+</div>	
+	
+<img src="picture/patientMEGIC4.jpg" id="hospitalImagePicture" usemap="#workmap">
+
+<map name="workmap" class="workmapOutlines">
+	<area id="chest" shape="circle" coords="504,424,29" alt="chest" onclick="audioOpenClick()"> 
+	<area id="monitor" shape="rect" coords="158,330,273,406" alt="monitor" onclick="onOpenClick()">
+	<area id="mouth" shape="circle" coords="498,338,28" alt="mouth" onclick="purselipsOpenClick()">
+</map>
+
+
+
+<div class="vitalsContainer">
+<img src="picture/vitalsshort.jpg" class="popuptext" id="vitalsPopup">
+</div>
+<div class="purselipsContainer">
+<img src="picture/purselips.jpg" class="popuplips" id="purselipsPopup">
+</div>
+<div class="stridorContainer">
+<audio controls id="stridorSound" class="popupaudio" src="picture/stridor.mp3"></audio>
+</div>
+
+
+</div>
+
+<script type="text/javascript" src="draggin.min.js"></script>
+</body>
+</html>

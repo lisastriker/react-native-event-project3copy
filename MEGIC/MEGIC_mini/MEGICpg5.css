@@ -1,0 +1,406 @@
+
+html, body{
+	min-height:100%;
+	overflow:scroll;
+}
+
+/*Hospital frame*/
+
+#hospitalImage {
+	position:absolute;
+	overflow:scroll;
+
+}
+
+#hospitalImageToDisappear{
+	position:aboslute;
+	overflow:scroll;
+}
+
+#hospitalImageAfter{
+	position:absolute;
+	visibility:hidden;
+	
+}
+
+/*Right container*/
+.checkListul {
+  list-style-type: none;
+  padding-left:0px;
+  display:initial;
+}
+
+.checkListClass.done:before{
+	content:url("picture/greentick.png");
+}
+
+.checkListClass{
+	font-family:monospace;
+	visibility:hidden;
+	font-size:1.2em;
+}
+
+.rightInfo{
+	padding-left:2%;
+	background-color:white;
+	opacity:90%;
+    display: block;
+    position: absolute;
+    right: 0%;
+    height: 22%;
+    width: 30%;
+	top:16%;
+    z-index: 3;
+	visibility:hidden;
+}
+
+
+#taskComplete{
+	visibility:hidden;
+	font-family: monospace;
+	font-size:1.2em;
+}
+
+/*Cover*/
+.coverContainer {
+	height:4%;
+	padding:1% 1% 1% -1%;
+	font-family:monospace;
+	width:100%;
+	opacity:0.8;
+	background-color:black;
+	color:white;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+.cover, .cover1{
+	padding-top: 0.5%;
+	padding-left:2%;
+	display:flex;
+	animation: type 4s steps(7, end) forwards;
+	-webkit-animation: type 4s steps(7,end) forwards;
+}
+.typing{
+	font-size:1.2em;
+	position:relative;
+	display:inline-block;
+	width: 100%;
+	white-space:nowrap;
+    overflow:hidden;
+	 
+}
+
+
+#headPosition{
+	cursor:pointer;
+}
+
+.bagValveMaskContainer{
+	position: absolute;
+    bottom: 36%;
+    left: 70%;
+}
+
+.columnformat {
+	padding-left: 0;
+	position:relative;
+	display: inline-flex;
+	width:100%;
+	margin:0;
+	height: 80px;
+}
+
+#mask1{
+	position: relative;
+	height:60px;
+	width:60px;
+}
+
+#mask{
+	position: relative;
+	height:40px;
+	width:40px;
+}
+
+
+.mask{
+	border: black solid 5px;
+}
+
+ul{
+	column-count:5;
+	-webkit-column-count:4;
+	list-style-type:none;
+}
+
+.listFormat {
+	display:inline-block;
+}
+
+@-webkit-keyframes growUp {   
+  0%  { -webkit-transform: scaleY(1); }
+  50% { -webkit-transform: scaleY(0.6); }
+  50% { -webkit-transform: scaleY(1); }
+}
+
+@-webkit-keyframes shrinkDown {   
+  0%  { -webkit-transform: scaleY(1); }
+  100% { -webkit-transform: scaleY(0.6); }
+}
+
+@-moz-keyframes growUp {
+  0%  { -moz-transform: scaleY(0.6); }
+  100%{	-moz-transform: scaleY(1);}
+}
+
+@-o-keyframes growUp {
+  0%  { -o-transform: scaleY(0.6); }
+  100% { -o-transform: scaleY(1); }
+}
+
+@-ms-keyframes growUp {
+  0%  { -ms-transform: scaleY(0.6); }
+  100% { -ms-transform: scaleY(1); }
+}
+
+@keyframes growUp {
+  0%  { transform: scaleY(1); }
+  50% { transform: scaleY(0.6); }
+  100% { transform: scaleY(1); }
+}
+
+
+
+/* circle__wrapper will help you to position the div in the center of the page */
+.circleWrapper { 
+  position: absolute;
+    top: 32%;
+    left: 52%;
+}
+
+@-webkit-keyframes moving{
+	from{ bottom:0; right:0}
+	to{	bottom:70px; right:80px}
+}
+
+@-webkit-keyframes moving1{
+	from{ bottom:0; right:0}
+	to{	bottom:80px; right:145px}
+}
+.movingNow1{
+	animation-name:moving1;
+	animation-duration:2s;
+	animation-fill-mode:forwards;
+
+}
+.movingNow{
+	animation-name:moving;
+	animation-duration:2s;
+	animation-fill-mode:forwards;
+
+}
+
+.movingBack1{
+	animation-name:moving1;
+	animation-duration:1s;
+	animation-fill-mode:backwards;
+}
+
+.movingBack{
+	animation-name:moving;
+	animation-duration:1s;
+	animation-fill-mode:backwards;
+
+}
+#maskReturn{
+	border:2px solid black;
+	background-color:red;
+	color:white;
+	padding: 3%;
+}
+
+#circleSize{
+  cursor:pointer;
+  display:block; 
+  height: 80px; 
+  width: 100px;
+  background-color: #00af00; 
+  -webkit-border-radius: 70%; 
+  -moz-border-radius: 70%; 
+  border-radius: 70%; 
+	/*animation-timing-function: ease-in;
+  -webkit-animation: shrinkDown 1s 0.5s; /
+  -moz-animation: shrinkDown 1s 0.5s; 
+  -ms-animation: shrinkDown 1s 0.5s; 
+  -o-animation: shrinkDown 1s 0.5s; 
+  animation: shrinkDown 1s 0.5s; 
+  animation-fill-mode:forwards;* You can remove 1.5s if you don't want delay */
+
+ 
+}
+
+
+
+.circleSize{
+	animation-timing-function: ease-in;
+  -webkit-animation: growUp 1.5s 0.5s; /* You can remove 1.5s if you don't want delay */
+  -moz-animation: growUp 1.5s 0.5s; 
+  -ms-animation: growUp 1.5s 0.5s; 
+  -o-animation: growUp 1.5s 0.5s;
+  animation: growUp 1.5s 0.5s; 
+  animation-fill-mode:forwards;
+  transition:0s;
+
+}
+
+
+
+.instructions{
+	position:absolute;
+	top:3%;
+	left:14%;
+	width: 25%;
+    text-align: justify;
+}
+
+ol{
+	column-count:1;
+	-webkit-column-count:1;
+	margin-block-start:0.5em;
+}
+
+li .listFormat1{
+	display:block;
+}
+
+.circle {
+	position:absolute;
+	bottom: 15%;
+    right: 7%;
+	display:flex;
+}
+
+h2{
+	font-size: 1.2em;
+	padding-inline-start:40px;
+	margin-block-end:0.5em;
+}
+
+.timer{
+	border-radius: 50%;
+	width: 100px;
+    height: 100px;
+	position:inherit;
+	z-index:2;
+	background-color:transparent;
+}
+
+#time{
+	cursor:pointer;
+	position:inherit;
+	text-align:center;
+	top: 20%;
+    left: 25%;
+	font-family:monospace;
+	font-size:1.4em;
+	z-index:1;
+}
+
+.together{
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    width: 100px;
+    height: 100px;
+    border: black solid 3px;
+}
+
+@-webkit-keyframes greenPulse {
+from { -webkit-box-shadow: 0 0 1px #e3230e; }
+50% {  -webkit-box-shadow: 0 0 25px #e64845; }
+to {-webkit-box-shadow: 0 0 9px #c22011; }
+}
+
+@-moz-keyframes greenPulse{
+	from { -moz-box-shadow: 0 0 1px #e3230e; }
+50% {  -moz-box-shadow: 0 0 25px #e64845; }
+to { -moz-box-shadow: 0 0 9px #c22011; }
+	
+}
+
+@keyframes greenPulse{
+	from { box-shadow: 0 0 1px #e3230e; }
+50% {  box-shadow: 0 0 25px #e64845; }
+to { box-shadow: 0 0 9px #c22011; }
+	
+}
+
+@keyframes type {
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+}
+
+@-webkit-keyframes type {
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+	
+}
+
+@-moz-keyframes type{
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+	
+}
+
+@-o-keyframes type{
+	from{
+		margin-right:100%;
+	}
+	to{
+		margin-right:0%;
+	}
+}
+	
+.circle {
+	font-size: 1rem;
+	position: absolute;
+    bottom: 15%;
+    right: 7%;
+    display: flex;
+
+}
+
+.nextIcon {
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  z-index: 5;
+  -webkit-animation: greenPulse 2s infinite;
+  -moz-animation: greenPulse 2s infinite;
+  -o-animation: greenPulse 2s infinite;
+  animation: greenPulse 2s infinite;
+  text-align:center;
+  font-size:2em;
+}
+
+

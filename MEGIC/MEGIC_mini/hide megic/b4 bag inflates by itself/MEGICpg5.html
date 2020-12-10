@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="MEGICpg5.css">
+<script src="MEGICpg5.js"></script>
+<script type="text/javascript" src="draggin.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div id="hospitalImage">
+
+<img id="hospitalImageToDisappear" src="picture/beforeheadtilt1.jpg" usemap="#workmap">
+
+<map name="workmap">
+<area alt="headPosition" id="headPosition" coords="659,346,39" shape="circle" onclick="revealHeadTilt()">
+</map>
+</div>
+
+<script type="text/javascript" src="draggin.min.js">
+</script>
+
+<div id="hospitalImageAfter">
+<div class="coverContainer">
+<div class="cover">
+<div class="typing">
+Please proceed to ventilate the patient using the bag-valve-mask.
+</div>
+</div>
+</div>
+
+<div class="rightInfo" id="rightInfo">
+<p id="taskComplete">Task to be completed</p>
+<ul class="checkListul" id="checkListul">
+<li class="checkListClass" id="list1">Position Patient</li>
+<li class="checkListClass" id="list2">Choose size of mask</li>
+<li class="checkListClass" id="list3">Ventilate Patient</li>
+</ul>
+</div>
+
+
+<img src="picture/headtiltwBVM.jpg">
+<div class="circleWrapper">
+<p id="circleSize" class="circleSize" onclick="sizeChange()">
+</p>
+</div>
+
+<div class="instructions">
+<h2>Prepare to Bag-Valve-Mask the patient</h2>
+<ol start="1">
+<li class="listFormat1">On the table is an adult and child mask. Tap on the correct mask size to use on the patient</li>
+<li class="listFormat1">Click on the timer to start time.</li>
+<li class="listFormat1">Tap on the Bag to squeeze it. Tap it in the correct rhythm for at least 8 times to ventilate patient properly</li>
+</ol>
+</div>
+
+<div class="together">
+<input id="timer" class="timer" onclick="runTimer()" type="button">
+<p id="time">00.00</p>
+</input>
+</div>
+
+<div class="bagValveMaskContainer">
+<ul class="columnformat">
+<li class="listFormat"><img class="mask" id="mask" src="picture/mask1.png" ontouchmove="checkForMove()" onclick="checkForMove()"></li>
+<li class="listFormat"><img class="mask" id="mask1" src="picture/mask1.png"  ontouchmove="checkForMove1()" onclick="checkForMove1()"></li>
+</ul>
+<button id="maskReturn" onclick="sendMask()">Send mask back to table</button>
+</div>
+
+
+<div class="circle">
+<div class="nextIcon">
+<a href="MEGICpg6.html"id="nextPage">Next</a>
+</div>
+</div>
+</div>
+
+</body>
+</html>

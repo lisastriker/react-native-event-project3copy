@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="megic2new.css">
+<script src="MEGICpg2.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<div id="hospitalImage">
+
+<div class="coverContainer">
+<div class="cover">
+<div class="typing">
+Please manage this patient
+</div>
+</div>
+</div>
+
+<div class="rightInfo">
+<p id="taskComplete">Task to be completed</p>
+<ul class="checkListul">
+<li class="checkListClass" id="list1">Item chosen to be administered</li>
+<li class="checkListClass" id="list2">Administration route chosen</li>
+<li class="checkListClass" id="list3">Oxygen level set</li>
+</ul>
+</div>
+
+<div class="dot" id="dot" onclick="revealOxygenBar()">
+</div>
+
+<div class="slideContainer" id="oxygenBar">
+<input type="range" min="1" max="15" value="5" class="slider" id="myRange">
+<p id="litres">Litres / Min : <span id="slideAmount"></span></p>
+</div>
+
+<div class="questionContainer" id="questionContainer">
+<form>
+Is his airway patent/protected?<br>
+<input type="radio" id="patentYes" name="patent" onclick="nextQuestion()">Yes<br>
+<input type="radio" id="patentNo" name="patent" onclick="nextQuestion()">No<br>
+<p id="nextButton" onclick="nextQuestion1()">Next Question</p>
+</form>
+<p id="answer1"></p>
+</div>
+
+<div class="questionContainer1" id="questionContainer1">
+<form>
+Is his breathing optimized?<br>
+<input type="radio" id="breathingYes" name="breathing" onclick="checkAnswer2()">Yes<br>
+<input type="radio" id="breathingNo" name="breathing" onclick="checkAnswer2()">No<br>
+<p id="nextButton1" onclick="nextQuestion2()">Next Question</p>
+</form>
+<p id="answer2"></p>
+</div>
+
+<div class="administerContainer" id="administerContainer">
+<div class="administerContainerLeft" id="administerContainerLeft">
+<p id="administer">WHAT would you like to administer? Drag and drop into the squares above.</p>
+<!--items for administration -->
+<ul class="columnformat">
+<li class="listformat"><img class="draggable sabultamol" id="sabultamol" src="picture/ventolin1.png" ontouchmove="checkForPress()" onclick="checkForPress()"></li>
+<li class="listformat"><img class="draggable niv" id="niv" src="picture/niv2.png" ontouchmove="checkForPress()" onclick="checkForPress()"></li>
+<li class="listformat"><img class="draggable supplementaloxygen" id="supplementaloxygen" src="picture/supplementaloxygen1.png" ontouchmove="checkForPress()" onclick="checkForPress()"></li>
+<li class="listformat"><img class="draggable cortisol" id="cortisol" src="picture/cortisol2.png" ontouchmove="checkForPress()" onclick="checkForPress()"></li>
+</ul>
+</div>
+<div class="administerContainerRight" id="administerContainerRight">
+<p id="administer1">HOW would you like to administer? Drag and drop into the squares above.</p>
+<ul class="columnformat">
+<li class="listformat"><img class="draggable mask" id="nonrebreathermask" src="picture/nonrebreathermask1.png" ontouchmove="checkForPress1()" onclick="checkForPress1()"></li>
+<li class="listformat"><img class="draggable facemask" id="facemask" src="picture/facemask1.png" ontouchmove="checkForPress1()" onclick="checkForPress1()"></li>
+<li class="listformat"><img class="draggable ventimask" id="ventimask" src="picture/venturimask1.png" ontouchmove="checkForPress1()" onclick="checkForPress1()"></li>
+<li class="listformat"><img class="draggable nasalprongs" id="nasalprongs" src="picture/nasalprongs1.png" ontouchmove="checkForPress1()" onclick="checkForPress1()"></li>
+<li class="listformat"><img class="draggable bagvalvemask" id="bagvalvemask" src="picture/bagvalvemask.png" ontouchmove="checkForPress1()" onclick="checkForPress1()"></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<script type="module">
+import 'https://cdn.interactjs.io/v1.9.20/auto-start/index.js'
+import 'https://cdn.interactjs.io/v1.9.20/actions/drag/index.js'
+import 'https://cdn.interactjs.io/v1.9.20/actions/resize/index.js'
+import 'https://cdn.interactjs.io/v1.9.20/modifiers/index.js'
+import 'https://cdn.interactjs.io/v1.9.20/dev-tools/index.js'
+import interact from 'https://cdn.interactjs.io/v1.9.20/interactjs/index.js'
+
+interact('.draggable')
+  .draggable({
+    // enable inertial throwing
+    inertia: true,
+    // keep the element within the area of it's parent
+    modifiers: [
+      interact.modifiers.restrictRect({
+        endOnly: true
+      })
+    ],
+    // enable autoScroll
+    autoScroll: true,
+
+    listeners: {
+      // call this function on every dragmove event
+      move: dragMoveListener,
+
+      // call this function on every dragend event
+      end (event) {
+        var textEl = event.target.querySelector('p')
+
+        textEl && (textEl.textContent =
+          'moved a distance of ' +
+          (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
+                     Math.pow(event.pageY - event.y0, 2) | 0))
+            .toFixed(2) + 'px')
+      }
+    }
+  })
+
+function dragMoveListener (event) {
+  var target = event.target
+  // keep the dragged position in the data-x/data-y attributes
+  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+
+  // translate the element
+  target.style.webkitTransform =
+    target.style.transform =
+      'translate(' + x + 'px, ' + y + 'px)'
+
+  // update the posiion attributes
+  target.setAttribute('data-x', x)
+  target.setAttribute('data-y', y)
+}
+
+// this function is used later in the resizing and gesture demos
+window.dragMoveListener = dragMoveListener
+
+</script>
+
+
+<!--<script type="text/javascript" src="draggin.min.js"></script>-->
+
+<div class="circle" id="circle">
+<div class="nextIcon">
+<a href="MEGICpg3.html"id="nextPage">Next</a>
+</div>
+</div>
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("slideAmount");
+output.innerHTML = slider.value;
+
+slider.onchange = function() {
+output.innerHTML = this.value;
+document.getElementById("list3").classList.toggle("done",true);
+if(output.innerHTML==15){
+alert("Oxygen dial is set at 15. That is correct.");
+}
+else{
+alert("You should have set the oxygen dial to 15.");
+}
+}
+</script>
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

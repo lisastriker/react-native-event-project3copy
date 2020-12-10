@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="googleform.css">
+<script src="googleform.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+<div class="container">
+<div class="header" id="header">Facillator Screen</div>
+
+<div class="modal" id="modal">
+<div class="innerModal">
+<p id="role">Please ensure you have a part task trainer and a peer beside you for this exercise. Choose your role:<p>
+<div class="buttonContainer">
+<a href="learner.html" class="button1" id="learner">Learner</a>
+<button id="facilitator" class="button1" onclick="facilitatorPage()">Facilitator</button>
+</div> 
+</div>
+</div>
+
+<div class="rightBody" id="rightBody">
+<h1>Scenario</h1>
+<p id="text">60yo Chinese male, warded for acute cholecystitis. He was started on fluid therapy, antibiotics and analgesics. Shortly after, he calls for help due to difficulty breathing. You are the house officer (HO) of the general surgery ward. Upon approaching the patient, how would you proceed?
+</p>
+</div>
+<img id="logo" src="picture/practicesim.png">
+
+<div class="leftBody" id="leftBody">
+<button type="button" class="collapsible">Assess patient</button>
+<div class="content">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeGpYMU_uwKNWx4gfLFXluci3IXzv_yvODr0LAXUizhCxr9zA/viewform?embedded=true" width="640" height="803" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+
+<button type="button" class="collapsible">Perform NRM</button>
+<div class="content">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe-7_oVg97jXzHgy6WLz2HQIm1Msu0XQO1N84F-YGd76C3ivQ/viewform?embedded=true" width="640" height="506" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+
+<button type="button" class="collapsible">Perform Bag Valve Mask</button>
+<div class="content">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdiBaiiKYa-CGE-bzpaSEY4ZlCFNoAezCp0wLW65VkB_Da2Tw/viewform?embedded=true" width="640" height="1017" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+
+
+<button type="button" class="collapsible">Discussion</button>
+<div class="content">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdOgZ8OKaZ4Uds-MAqI0M6NLOG5Poid-0eWqYi3yBIXnQ8nvA/viewform?embedded=true" width="640" height="501" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+
+<button type="button" class="collapsible">Management</button>
+<div class="content">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSew-z-CEuHfnJyd8k3EHDoneIe2IZw3Pn40IDAbfLJW9kqchQ/viewform?embedded=true" width="640" height="1055" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+
+<button type="button" class="collapsible">Plan</button>
+<div class="content">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdWgDvdAr58zfr75CYY8SolvWhe48wBpHo5Ft_2msIv72hSFQ/viewform?embedded=true" width="640" height="632" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+</div>
+
+
+</div>
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}</script>
+
+</body>
+</html>
